@@ -15,4 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('inicio');
+
+Route::get('posts', function (){
+   return 'POSTS';
+})->name('posts_listado');
+
+Route::get('posts/{id}', function ($id){
+   return 'POST id: ' . $id;
+})->name('posts_ficha');
