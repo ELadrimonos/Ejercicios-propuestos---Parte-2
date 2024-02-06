@@ -11,7 +11,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        return view('posts.index');
     }
 
     /**
@@ -19,7 +19,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return redirect(route('inicio'));
     }
 
     /**
@@ -35,7 +35,7 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('posts.show', compact('id'));
     }
 
     /**
@@ -43,7 +43,7 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return redirect(route('inicio'));
     }
 
     /**

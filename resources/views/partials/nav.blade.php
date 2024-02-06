@@ -6,7 +6,7 @@
                 <a class="nav-link" href="{{route('inicio')}}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{route('posts_listado')}}">Posts</a>
+                <a class="nav-link" href="{{route('posts.index')}}">Posts</a>
             </li>
         </ul>
     </div>
