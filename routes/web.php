@@ -26,4 +26,5 @@ Route::get('/', function () {
 //    return view('posts.ficha', compact('id'));
 //})->name('posts_ficha');
 
-Route::resource('posts', PostController::class)->only(['index', 'show', 'create', 'edit']);
+Route::resource('posts', PostController::class)->only(['index', 'show', 'create', 'edit', 'destroy']);
+

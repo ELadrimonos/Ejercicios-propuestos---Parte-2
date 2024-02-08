@@ -65,6 +65,6 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         $post->delete();
 
-        return redirect()->route('posts.index')->with('success', 'Libro eliminado exitosamente');
+        return redirect()->route('posts.index')->with('success', 'Post eliminado exitosamente');
     }
 }
