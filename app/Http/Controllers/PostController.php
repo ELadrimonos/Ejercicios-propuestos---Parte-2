@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -11,7 +12,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('posts.index');
+        $posts = Post::paginate(5);
+        return view('posts.index', compact('posts'));
     }
 
     /**
@@ -35,7 +37,8 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        return view('posts.show', compact('id'));
+        $post = Post::findOrFail($id);
+        return view('posts.show', compact('post'));
     }
 
     /**
@@ -59,6 +62,9 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->delete();
+
+        return redirect()->route('posts.index')->with('success', 'Libro eliminado exitosamente');
     }
 }

@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
+            $table->foreignId('usuario_id')->constrained(
+                table: 'usuarios', indexName: 'posts_user_id'
+            );
             $table->string('titulo');
             $table->text('contenido');
             $table->timestamps();
