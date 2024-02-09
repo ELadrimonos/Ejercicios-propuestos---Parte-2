@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Comentario extends Model
 {
     use HasFactory;
 
@@ -14,8 +14,8 @@ class Post extends Model
         return $this->belongsTo(Usuario::class);
     }
 
-    public function comentarios()
+    public function post()
     {
-        return $this->hasMany(Comentario::class)->orderBy('created_at', 'DESC');
+        return $this->belongsTo(Post::class);
     }
 }

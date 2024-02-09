@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Usuario;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -38,7 +39,8 @@ class PostController extends Controller
     public function show(string $id)
     {
         $post = Post::findOrFail($id);
-        return view('posts.show', compact('post'));
+        $usuarios = Usuario::all();
+        return view('posts.show', compact('post', 'usuarios'));
     }
 
     /**

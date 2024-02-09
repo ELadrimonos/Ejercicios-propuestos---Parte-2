@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,4 +28,5 @@ Route::get('/', function () {
 //})->name('posts_ficha');
 
 Route::resource('posts', PostController::class)->only(['index', 'show', 'create', 'edit', 'destroy']);
+Route::resource('comentarios', ComentarioController::class)->only(['store', 'edit', 'destroy']);
 
